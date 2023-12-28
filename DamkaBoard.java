@@ -17,7 +17,10 @@ public class DamkaBoard {
 					currentLine +=" *";
 				}
 			}
-			System.out.println(currentLine);
+			System.out.print(currentLine);
+			if(line != numberOrLinesAndColumns){
+				System.out.println();
+			}
 		}
 	}
 }
