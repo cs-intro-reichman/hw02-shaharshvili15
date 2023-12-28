@@ -8,15 +8,12 @@ public class OneOfEach {
 	public static void main (String[] args) {
 		Random rand = new Random();
 		//0 is boy 1 is girl
-		int randomNumber = rand.nextInt(2);
-		char boyOrGirl = randomNumber == 0 ? 'b' : 'g';
-		System.out.print(boyOrGirl + " ");
-		boolean boy = randomNumber == 0;
-		boolean girl = randomNumber == 1;
-		int childrenCount=1;
+		int childrenCount=0;
+		boolean boy = false;
+		boolean girl = false;
 		while (!boy || !girl){
 			childrenCount++;
-			randomNumber = rand.nextInt(2);
+			int randomNumber = rand.nextInt(2);
 			if(randomNumber == 0){
 				System.out.print("b ");
 				boy = true;
