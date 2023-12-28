@@ -7,14 +7,14 @@ import java.util.Random;
 public class OneOfEach {
 	public static void main (String[] args) {
 		Random rand = new Random();
-		//0 is boy 1 is girl
+		//less than 0.5 is boy more or equal than 0.5 is a girl
 		int childrenCount=0;
 		boolean boy = false;
 		boolean girl = false;
 		while (!boy || !girl){
 			childrenCount++;
-			int randomNumber = rand.nextInt(2);
-			if(randomNumber == 0){
+			double randomNumber = rand.nextDouble(1);
+			if(randomNumber < 0.5){
 				System.out.print("b ");
 				boy = true;
 			}

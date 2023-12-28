@@ -13,8 +13,54 @@ public class OneOfEachStats {
 		int T = Integer.parseInt(args[0]);
 		int seed = Integer.parseInt(args[1]);
 		// Initailizes a random numbers generator with the given seed value
-        Random generator = new Random(seed);  
-		
+        Random rand = new Random(seed);
+		//int numberOfTimesToRun = Integer.parseInt(args[0]);
+		int twoChildrenFamilies = 0;
+		int threeChildrenFamilies = 0;
+		int fourOrMoreChildrenFamilies = 0;
+		int sumOfAllChildren = 0;
+		String mostCommon = "";
+		for (int i = 0; i< T ; i++){
+			int childrenCount=0;
+			boolean boy = false;
+			boolean girl = false;
+			while (!boy || !girl){
+				childrenCount++;
+				double randomNumber = rand.nextDouble();
+				if(randomNumber < 0.5){
+					boy = true;
+				}
+				else{
+					girl = true;
+				}
+			}
+			if(childrenCount == 2){
+				twoChildrenFamilies++;
+			}
+			else if(childrenCount == 3){
+				threeChildrenFamilies++;
+			}
+			else{
+				fourOrMoreChildrenFamilies++;
+			}
+			sumOfAllChildren += childrenCount;
+			if(twoChildrenFamilies > threeChildrenFamilies && twoChildrenFamilies > fourOrMoreChildrenFamilies){
+				mostCommon = "2";
+			}
+			else if(threeChildrenFamilies > twoChildrenFamilies && threeChildrenFamilies > fourOrMoreChildrenFamilies){
+				mostCommon = "3";
+			}
+			else if(fourOrMoreChildrenFamilies > twoChildrenFamilies && fourOrMoreChildrenFamilies > threeChildrenFamilies){
+				mostCommon = "4 or more";
+			}
+		}
+
+		var average = (double)sumOfAllChildren/T;
+		System.out.println("Average: " + average + " children to get at least one of each gender.");
+		System.out.println("Number of families with 2 children: " + twoChildrenFamilies);
+		System.out.println("Number of families with 3 children: " + threeChildrenFamilies);
+		System.out.println("Number of families with 4 or more children: " + fourOrMoreChildrenFamilies);
+		System.out.println("The most common number of children is " + mostCommon + ".");
 		//// In the previous version of this program, you used a statement like:
 		//// double rnd = Math.random();
 		//// Where "rnd" is the variable that stores the generated random value.
