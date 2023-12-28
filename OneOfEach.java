@@ -14,7 +14,7 @@ public class OneOfEach {
 		boolean boy = randomNumber == 0;
 		boolean girl = randomNumber == 1;
 		int childrenCount=1;
-		while (boy == false || girl == false){
+		while (!boy || !girl){
 			childrenCount++;
 			randomNumber = rand.nextInt(2);
 			if(randomNumber == 0){
