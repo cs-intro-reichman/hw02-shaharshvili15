@@ -8,19 +8,19 @@ public class DamkaBoard {
 			String currentLine ="";
 			for(int column = 1;column<=numberOrLinesAndColumns;column++ ){
 				if(line%2 == 0 && column == 1){
-					currentLine += " *";
+					currentLine += " * ";
 				}
 				else if (line%2 != 0 && column == 1) {
-					currentLine += "*";
+					currentLine += "* ";
 				}
 				else{
-					currentLine +=" *";
+					currentLine +=" * ";
 				}
 			}
-			System.out.println(currentLine);
-			//if(line != numberOrLinesAndColumns){
-			//	System.out.println();
-			//}
+			System.out.print(currentLine);
+			if(line != numberOrLinesAndColumns){
+				System.out.println();
+			}
 		}
 	}
 }
