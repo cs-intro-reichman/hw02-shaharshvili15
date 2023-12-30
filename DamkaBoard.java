@@ -8,13 +8,16 @@ public class DamkaBoard {
 			String currentLine ="";
 			for(int column = 1;column<=numberOrLinesAndColumns;column++ ){
 				if(line%2 == 0 && column == 1){
-					currentLine += " * ";
+					currentLine += " *";
 				}
 				else if (line%2 != 0 && column == 1) {
-					currentLine += "* ";
+					currentLine += "*";
 				}
 				else{
-					currentLine +=" * ";
+					currentLine +=" *";
+				}
+				if(line%2 == 1 && column == numberOrLinesAndColumns){
+					currentLine += " ";
 				}
 			}
 			System.out.print(currentLine);
