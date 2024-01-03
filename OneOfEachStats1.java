@@ -8,7 +8,6 @@ import java.util.Random;
  */
 public class OneOfEachStats1 {
 	public static void main (String[] args) {
-		//// Put your code here
 		int numberOfTimesToRun = Integer.parseInt(args[0]);
 		int twoChildrenFamilies = 0;
 		int threeChildrenFamilies = 0;
