@@ -5,7 +5,7 @@
 public class Reverse {
 	public static void main (String[] args){
 		String value = args[0];
-		int middle = ((value.length() % 2) == 0) ? ((value.length() / 2))-1 : (int) (double) (value.length() / 2);
+		int middle = ((value.length() % 2) == 0) ? ((value.length() / 2)) : (int) (double) (value.length() / 2);
 		String reversed ="";
 		for(int i = value.length()-1; i>= 0 ; i--){
 			System.out.print(value.charAt(i));
